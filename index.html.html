@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universal ($UNIV) - La Meme Coin che Punta alle Galassie!</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6a0dad; /* Viola Spaziale */
+            --secondary-color: #00bcd4; /* Ciano Galattico */
+            --accent-color: #ffeb3b; /* Giallo Stella */
+            --text-color-light: #e0e0e0;
+            --text-color-dark: #333;
+            --bg-dark: #1a1a2e; /* Sfondo Galattico */
+            --bg-light: #f4f4f4;
+            --card-bg: #2b2b4d;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-dark);
+            color: var(--text-color-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--bg-dark) 100%);
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--secondary-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+            text-shadow: 0 0 15px var(--secondary-color);
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.5em;
+            color: var(--text-color-light);
+            max-width: 800px;
+            margin: 0 auto 30px auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: var(--bg-dark);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-button:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+        }
+
+        section {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        section h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.8em;
+            margin-bottom: 40px;
+            color: var(--secondary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .intro-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .intro-card {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            width: calc(33% - 40px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .intro-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        .intro-card h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .intro-card p {
+            color: var(--text-color-light);
+            font-size: 1.1em;
+        }
+
+        #mascot-section {
+            background-color: var(--bg-dark);
+            padding: 80px 0;
+        }
+
+        #mascot-section .mascot-text {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        #mascot-section .mascot-text h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5em;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+
+        #mascot-section .mascot-text p {
+            font-size: 1.2em;
+            color: var(--text-color-light);
+        }
+
+        #tokenomics {
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #0d0d26 100%);
+        }
+
+        .tokenomics-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .tokenomics-item {
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            width: calc(33% - 40px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            border-bottom: 5px solid var(--secondary-color);
+        }
+
+        .tokenomics-item h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+        .tokenomics-item p {
+            font-size: 1.1em;
+            color: var(--text-color-light);
+        }
+        .tokenomics-item strong {
+            color: var(--accent-color);
+        }
+
+        #roadmap {
+            background-color: var(--bg-dark);
+        }
+
+        .roadmap-timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .roadmap-timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            right: -17px;
+            background-color: var(--secondary-color);
+            border: 4px solid var(--accent-color);
+            top: 15px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .timeline-item.left {
+            left: 0;
+        }
+
+        .timeline-item.right {
+            left: 50%;
+        }
+
+        .timeline-item.right::after {
+            left: -16px;
+        }
+
+        .timeline-content {
+            background-color: var(--card-bg);
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+            text-align: left;
+            border-right: 5px solid var(--secondary-color);
+        }
+
+        .timeline-item.left .timeline-content {
+            border-right: none;
+            border-left: 5px solid var(--secondary-color);
+        }
+
+        .timeline-content h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-color);
+            margin-top: 0;
+            font-size: 1.6em;
+        }
+        .timeline-content p {
+            color: var(--text-color-light);
+        }
+
+        #community {
+            background: linear-gradient(135deg, #0d0d26 0%, var(--bg-dark) 100%);
+        }
+        
+        footer {
+            background-color: #0c0c1a;
+            color: var(--text-color-light);
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 3px solid var(--primary-color);
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer .disclaimer {
+            font-size: 0.8em;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 20px auto 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            header h1 {
+                font-size: 2.8em;
+            }
+            header p {
+                font-size: 1.2em;
+            }
+            .intro-card, .tokenomics-item {
+                width: calc(48% - 40px);
+            }
+            .roadmap-timeline::after {
+                left: 30px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 20px;
+                left: 0;
+            }
+            .timeline-item::after {
+                left: 15px;
+            }
+            .timeline-item.right::after {
+                left: 15px;
+            }
+            .timeline-item.left .timeline-content, .timeline-item.right .timeline-content {
+                border-left: 5px solid var(--secondary-color);
+                border-right: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+            section h2 {
+                font-size: 2em;
+            }
+            .intro-card, .tokenomics-item {
+                width: 100%;
+            }
+            .cta-button {
+                font-size: 1em;
+                padding: 12px 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Universal ($UNIV)</h1>
+            <p>To the moon? Carino. Noi puntiamo a tutte le galassie, contemporaneamente.</p>
+            <a href="https://pump.fun/" target="_blank" class="cta-button">Unisciti alla Flotta Stellare!</a>
+        </div>
+    </header>
+
+    <section id="about">
+        <div class="container">
+            <h2>Cos'è Universal ($UNIV)?</h2>
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <h3>Ambizione Intergalattica</h3>
+                    <p>Stanco delle solite rane e dei cani? Universal è la prima meme coin creata con un'ambizione che va oltre il sistema solare. Non puntiamo a un 1000x, ma a diventare la valuta non ufficiale di ogni forma di vita senziente.</p>
+                </div>
+                <div class="intro-card">
+                    <h3>Filosofia Cosmica</h3>
+                    <p>Universal è più di un token; è un promemoria che, nel grande schema delle cose, siamo tutti solo polvere di stelle che cerca di fare un po' di soldi con delle battute su Internet. Unisciti alla nostra visione (o allucinazione collettiva).</p>
+                </div>
+                <div class="intro-card">
+                    <h3>Tecnologia Avanzata (per una Meme Coin)</h3>
+                    <p>Basata su una blockchain robusta, $UNIV garantisce transazioni veloci e sicure. Anche se il nostro focus è il divertimento, la nostra infrastruttura è pronta per il viaggio più lungo che si possa immaginare.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="mascot-section">
+        <div class="container">
+            <div class="mascot-text">
+                <h2>Incontra Cosmo, il nostro Tardigrado Cosmico!</h2>
+                <h3>La Mascotte Più Resiliente dell'Universo.</h3>
+                <p>La nostra mascotte non è un animale carino. È un <strong>Tardigrado Cosmico</strong> di nome <strong>Cosmo</strong>, l'essere più resiliente dell'universo, capace di sopravvivere al vuoto dello spazio, alle radiazioni e persino a un crollo del mercato.</p>
+                <p>Cosmo non va "alla luna", lui *è già stato* sulla luna, l'ha trovata noiosa ed è tornato indietro. Lui incarna lo spirito di $UNIV: indistruttibile, avventuroso e leggermente sfacciato.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tokenomics">
+        <div class="container">
+            <h2>Tokenomics Cosmiche (La nostra "Scienza")</h2>
+            <div class="tokenomics-grid">
+                <div class="tokenomics-item">
+                    <h3>Nome Token</h3>
+                    <p><strong>Universal</strong></p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Ticker</h3>
+                    <p><strong>$UNIV</strong></p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Fornitura Totale</h3>
+                    <p><strong>1.000.000.000.000.000</strong> (Un quadrilione di token. Uno per ogni stella stimata nell'universo osservabile, più o meno.)</p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Tassa Transazionale</h3>
+                    <p>La nostra "Forza di Gravità": ogni transazione ha una tassa del <strong>10%</strong>.</p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Riflessi Cosmici</h3>
+                    <p><strong>5%</strong> ridistribuito istantaneamente a tutti gli "Universalnauti" (i nostri holder). Più tieni, più polvere di stelle ricevi.</p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Buco Nero</h3>
+                    <p><strong>3%</strong> di ogni transazione viene inviato a un wallet inaccessibile (il nostro "Buco Nero"), bruciando i token per sempre e rendendo quelli rimasti più rari.</p>
+                </div>
+                <div class="tokenomics-item">
+                    <h3>Nebulosa della Liquidità</h3>
+                    <p><strong>2%</strong> aggiunto al pool di liquidità per mantenere stabile l'orbita del prezzo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <div class="container">
+            <h2>La Mappa Stellare (La nostra "Roadmap")</h2>
+            <div class="roadmap-timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Fase 1: Il Big Bang</h3>
+                        <p>Lancio del token e del sito web (con animazioni di stelle e pianeti). Creazione dei canali social (Twitter, Telegram, Discord). Raggiungere i primi 1.000 Universalnauti.</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Fase 2: L'Espansione dell'Universo</h3>
+                        <p>Listing su CoinGecko e CoinMarketCap. Prima collezione di NFT: "I Tardigradi Leggendari". Merchandising ufficiale: magliette con Cosmo che fluttua nello spazio.</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Fase 3: Primo Contatto</h3>
+                        <p>Sponsorizzare un piccolo satellite amatoriale e mandare un wallet $UNIV nello spazio. Collaborazioni con influencer che sappiano indicare la costellazione dell'Orsa Maggiore. Obiettivo: Proiettare il logo di $UNIV sulla Luna (stiamo ancora verificando la fattibilità legale e fisica).</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Fase 4: La Singolarità</h3>
+                        <p>Sviluppare un sistema di pagamento interdimensionale. Diventare la valuta ufficiale per il commercio con civiltà extraterrestri (una volta stabilito il contatto). Risolvere l'entropia dell'universo. O almeno provarci.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="community">
+        <div class="container">
+            <h2>La Community: Gli Universalnauti</h2>
+            <p>Non siamo un "esercito". Siamo una flotta stellare di sognatori, esploratori e meme lord. La nostra community è il centro del nostro universo. Crediamo nella trasparenza, nel divertimento e nell'idea che se devi scommettere su qualcosa di assurdo, tanto vale che sia la cosa più assurda possibile.</p>
+            <p style="margin-top: 30px;">Pronto a salire a bordo della nostra nave spaziale? Unisciti a noi!</p>
+            <a href="https://pump.fun/" target="_blank" class="cta-button">Acquista $UNIV Ora!</a>
+        </div>
+    </section>
+
+    <footer id="buy-now">
+        <div class="container">
+            <p>&copy; 2025 Universal ($UNIV). Tutti i diritti riservati (nell'universo conosciuto e sconosciuto).</p>
+            <p>Contratto (fictional): 0xUNIVersal... (Indirizzo Contratto Ufficiale)</p>
+            <p class="disclaimer">Disclaimer: $UNIV è una meme coin creata per puro intrattenimento e non rappresenta un investimento finanziario. Le criptovalute sono altamente volatili. Fai le tue ricerche (DYOR) e investi solo ciò che sei disposto a perdere. Il nostro piano per contattare gli alieni potrebbe subire dei ritardi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
